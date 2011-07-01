@@ -27,15 +27,34 @@
   </div>
 <div>
     <%= u.label :About_Me %><br />
-    <%= u.text_field :about_me %>
+    <%= u.text_field :abount_me %>
   </div>
 <div>
     <%= u.label :Email %><br />
     <%= u.text_field :email_id %>
+</div>
+<div>
+    <%= u.label :enter_confirmation_email_id %><br />
+  <%= u.text_field :email_id_confirmation %>
   </div>
 <div>
     <%= u.label :Phone_Number %><br />
     <%= u.text_field :phone_no%>
   </div>
+
+<div>
+    <%= u.label :domain_adddress %><br />
+    <%= u.text_field :domain%>
+  </div>
+<div>
+    <%= u.label :age %><br />
+    <%= u.text_field :age %>
+  </div>
+<div>
+ <%= u.label :accept_all_the_conditions %>
+<%= u.check_box :conditions %>  
+   
+</div>
+
  <%= u.submit %>   
 <% end %>

@@ -9,7 +9,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email_id
       t.string :phone_no
       t.date :last_login
-
+      t.integer :page_views
+      t.boolean :conditions
+      t.string :email_id_confirmation
+      t.string :domain
+      t.integer :age
+      t.integer :card_number
+      t.string :payment_type
       t.timestamps
     end
   end

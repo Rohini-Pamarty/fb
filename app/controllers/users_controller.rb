@@ -9,12 +9,12 @@ class UsersController < ApplicationController
 	end
 	def create
 		@user= User.new(params[:user])
+		
 		if @user.valid?
 			@user.save
         		redirect_to(@user, :notice => 'Record was successfully created.') 
 		else
-			render :action => "new"
-			
+			render :action => "new"			
 		end
 	end
 	def new
@@ -26,10 +26,12 @@ class UsersController < ApplicationController
   	end
 	def update
    		 @user = User.find(params[:id])
-   		 if @user.update_attributes(params[:user])
-        		redirect_to(@user, :notice => 'Record was successfully updated.') 
+		 if @user.invalid?	
+   		        render :action => "edit" 
       		else
-        		 render :action => "edit" 
+			@user.update_attributes(params[:user])
+        		redirect_to(@user, :notice => 'Record was successfully updated.') 
+        		 
         	
       		end
     	end
