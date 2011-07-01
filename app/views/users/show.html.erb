@@ -1,0 +1,35 @@
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+<p>
+  <b>City:</b>
+  <%= @user.city %>
+</p>
+<p>
+  <b>Gender:</b>
+  <%= @user.sex %>
+</p>
+<p>
+  <b>Date Of Birth:</b>
+  <%= @user.birthday %>
+</p>
+<p>
+  <b>About Me:</b>
+  <%= @user.abount_me %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @user.email_id %>
+</p>
+<p>
+  <b>Phone Number:</b>
+  <%= @user.phone_no %>
+</p>
+<p>
+  <b>Page Views</b>
+ <%= @user.page_views %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

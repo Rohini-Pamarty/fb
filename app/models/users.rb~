@@ -1,0 +1,4 @@
+class User < ActiveRecord::Base
+	validates_inclusion_of :sex, :in => %w{female male}, :message => "%{value} is not allowed", :allow_blank => false
+	validates_uniqueness_of :email_id, :allow_blank => false
+end

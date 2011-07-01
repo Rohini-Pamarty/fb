@@ -1,0 +1,41 @@
+<%= form_for(@user) do |u| %>
+ <% if(@user).errors.any? %>
+  <div>
+    <h2>prohibited this post from being saved:</h2>
+    <ul>
+    <% (@user).errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div>
+    <%= u.label :name %><br />
+    <%= u.text_field :name %>
+  </div>
+<div>
+    <%= u.label :city %><br />
+    <%= u.text_field :city %>
+  </div>
+<div>
+    <%= u.label :Sex %><br />
+    <%= u.text_field :sex %>
+  </div>
+<div>
+    <%= u.label :Date_Of_Birth %><br />
+    <%= u.text_field :birthday %>
+  </div>
+<div>
+    <%= u.label :About_Me %><br />
+    <%= u.text_field :abount_me %>
+  </div>
+<div>
+    <%= u.label :Email %><br />
+    <%= u.text_field :email_id %>
+  </div>
+<div>
+    <%= u.label :Phone_Number %><br />
+    <%= u.text_field :phone_no%>
+  </div>
+ <%= u.submit %>   
+<% end %>

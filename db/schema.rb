@@ -1,0 +1,38 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended to check this file into your version control system.
+
+ActiveRecord::Schema.define(:version => 20110628051018) do
+
+  create_table "friends", :force => true do |t|
+    t.integer  "user_owner_id"
+    t.integer  "user_friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "friends", ["user_friend_id"], :name => "user_friend_id"
+  add_index "friends", ["user_owner_id"], :name => "user_owner_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "sex"
+    t.date     "birthday"
+    t.text     "abount_me"
+    t.string   "email_id"
+    t.string   "phone_no"
+    t.date     "last_login"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+end

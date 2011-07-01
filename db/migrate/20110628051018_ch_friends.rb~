@@ -1,0 +1,8 @@
+class ChFriends < ActiveRecord::Migration
+  def self.up
+	execute "ALTER TABLE friend ADD FOREIGN KEY (user_friend_id) references user(id);"
+  end
+
+  def self.down
+  end
+end

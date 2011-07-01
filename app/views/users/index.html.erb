@@ -1,0 +1,29 @@
+<h1>Users</h1>
+<table>
+  <tr>
+    <th>Name</th>	
+    <th>City</th>
+    <th>Sex</th>
+    <th>Date of Birth</th>
+    <th>About Me</th>
+    <th>Email id</th>
+    <th>Phone Number</th>
+  </tr>
+
+<% @users.each do |u| %>
+  <tr>
+  <td><%= u.name %></td>
+    <td><%= u.city %></td>
+    <td><%= u.sex %> </td>
+    <td><%= u.birthday %></td>
+    <td><%= u.abount_me %></td>
+    <td><%= u.email_id %></td>
+    <td><%= u.phone_no %></td>
+    <td><%= link_to 'Show', u %></td>
+    <td><%= link_to 'Edit', edit_user_path(u) %></td>
+    <td><%= link_to 'Destroy', u, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New User', new_user_path %>
